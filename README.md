@@ -15,6 +15,8 @@
 ```
 $ git clone https://github.com/attakei/eel-demo-with-slide.git
 $ cd eel-demo-with-slide
+$ git submodule init
+$ git submodule update
 $ pip install -r requirements.txt
 $ python main.py
 ```
