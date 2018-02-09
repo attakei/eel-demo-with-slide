@@ -11,4 +11,4 @@ def get_whois(zone):
 
 
 eel.init('web')
-eel.start('index.html')
+eel.start('slide.html')
