@@ -1,0 +1,139 @@
+<!doctype html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>reveal.js</title>
+
+        <!-- <script type="text/javascript" src="/eel.js"></script> -->
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="revealjs/css/reveal.css">
+        <!-- <link rel="stylesheet" href="revealjs/css/theme/black.css"> -->
+        <link rel="stylesheet" href="mytheme.css">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="revealjs/lib/css/zenburn.css">
+
+
+        <!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'revealjs/css/print/pdf.css' : 'revealjs/css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+                <section data-markdown="slides/title.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section data-markdown="slides/whoami.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section data-markdown="slides/about_eel.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section>
+                    <section>
+                        <h1>Demo</h1>
+                    </section>
+                    <section>
+                        <h3>WHOIS</h3>
+                        <div class="container">
+                            <form>
+                                <div class="form-group row">
+                                    <label for="demo-zone-input" class="col-sm-2 col-form-label">Zone</label>
+                                    <div class="col-sm-10">
+                                        <input type="text" class="form-control" id="demo-whois-input">
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <div class="col-sm-2"></div>
+                                    <div class="col-sm-4">
+                                        <button type="button" id="demo-whois-btn" class="btn btn-primary">調べる</button>
+                                    </div>
+                                </div>
+                                <div class="form-group row">
+                                    <p></p>
+                                </div>
+                                <div class="form-group row">
+                                    <textarea class="form-control" id="demo-zone-output" rows="10"></textarea>
+                                </div>
+                                </form>
+                            <script>
+                                document.getElementById('demo-whois-btn').addEventListener('click', async () =>  {
+                                    var val = document.getElementById('demo-whois-input').value;
+                                    console.log(val);
+                                    let result = await eel.get_whois(val)();
+                                    document.getElementById('demo-zone-output').value = result;
+                                });
+                            </script>
+                        </div>
+                    </section>
+                </section>
+                <section data-markdown="slides/demo.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section data-markdown="slides/pros-cons.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section data-markdown="slides/neta.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+                <section data-markdown="slides/end.md"
+                    data-separator="^\n\n\n"
+                    data-separator-vertical="^\n\n"
+                    data-separator-notes="^Note:"
+                    data-charset="utf-8">
+                </section>
+            </div>
+		</div>
+
+		<script src="revealjs/lib/js/head.min.js"></script>
+		<script src="revealjs/js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'revealjs/plugin/markdown/marked.js' },
+					{ src: 'revealjs/plugin/markdown/markdown.js' },
+					{ src: 'revealjs/plugin/notes/notes.js', async: true },
+					{ src: 'revealjs/plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+            });
+		</script>
+        <script type="text/javascript" src="/eel.js"></script>
+        <!-- Optional JavaScript -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    </body>
+</html>
